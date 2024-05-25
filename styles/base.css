@@ -1,15 +1,110 @@
-/* ### Primary */
-:root{
+:root {
+  /* ### Primary */
+  --text-title-section: hsl(14, 45%, 36%);
+  --text-title-time: hsl(332, 51%, 32%);
 
+  /* ### Neutral */
+  --bg-recipe: hsl(0, 0%, 100%);
+  --bg-time: hsl(330, 100%, 98%);
+  --bg-body: hsl(30, 54%, 90%);
+  --break-line: hsl(30, 18%, 87%);
+  --text: hsl(30, 10%, 34%);
+  --text-title-recipe: hsl(24, 5%, 18%);
 }
-/* - Nutmeg: hsl(14, 45%, 36%)
-- Dark Raspberry: hsl(332, 51%, 32%) */
 
-/* ### Neutral */
+body {
+  background-color: var(--bg-body);
+}
+.container,
+.container__header,
+.container__time,
+.container__section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+p,
+li,
+th,
+td{
+  font-family: "Outfit", serif;
+  color: var(--text);
+}
+.container__header__title,
+.container__time__title,
+.container__section__title {
+  font-family: "Young Serif", sans-serif;
+}
 
-/* - White: hsl(0, 0%, 100%)
-- Rose White: hsl(330, 100%, 98%)
-- Eggshell: hsl(30, 54%, 90%)
-- Light Grey: hsl(30, 18%, 87%)
-- Wenge Brown: hsl(30, 10%, 34%)
-- Dark Charcoal: hsl(24, 5%, 18%) */
+.container__header__title {
+  color: var(--text-title-recipe);
+  padding: 1rem 1rem 0 1rem;
+}
+.container__description,
+.container__section,
+.container__time {
+  margin: 1rem;
+}
+.container {
+  background-color: var(--bg-recipe);
+}
+.container__time {
+  width: 90%;
+  background-color: var(--bg-time);
+  padding: 1rem 3rem 1rem 1rem;
+  border-radius: 0.6rem;
+}
+.container__time__title {
+  color: var(--text-title-time);
+}
+.container__section__title {
+  color: var(--text-title-section);
+}
+.container__section:not(.container__section--not-line) {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--break-line);
+}
+
+.container__list {
+  margin-top: 0.82rem;
+}
+.img-dish {
+  width: inherit;
+  max-width: 100%;
+}
+.bold-text {
+  font-weight: 700;
+}
+.container__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding-left: 1.5rem;
+}
+ul li,
+ol li {
+  padding-left: 0.6rem;
+}
+ol li::marker {
+  color: var(--text-title-section);
+  font-weight: 500;
+}
+.container__section__table{
+    width: 100%;
+    padding: 1rem;
+    align-self: center;
+}
+.container__section__table__type{
+    font-weight: 400;
+}
+.container__section__table__value{
+    font-weight: 700;
+    color: var(--text-title-section);
+}
+tr{
+    border-bottom: 1px solid var(--break-line);
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: flex-start;
+    padding-bottom: 0.5rem;
+}
